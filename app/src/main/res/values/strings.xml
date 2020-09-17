@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">Baw Baw</string>
+
+    <!--  Home Page  -->
+    <string name="home_header">Baw Baw</string>
+    <string name="home_slogan">You Pet deserves more Care</string>
+    <string name="home_pet">My Pet</string>
+    <string name="home_record">Records</string>
+    <string name="home_vaccination">Vaccination</string>
+    <string name="home_appointments">Appointments</string>
+    <string name="home_veterinary">Veterinary</string>
+    <string name="home_expenses">Expenses</string>
+
+
+    <!--  Menu  -->
+
+    <string name="nav_home">Home</string>
+    <string name="nav_bmi">BMI Calculator</string>
+    <string name="nav_profile">My Details</string>
+    <string name="nav_name">Jone Snow</string>
+    <string name="nav_slogan">You Pet deserves more Care</string>
+    <string name="nav_expense">Expenses List</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- My pet -->
+    <string name="pet_name">Name</string>
+    <string name="pet_title">My Pet</string>
+    <string name="pet_date">Birthday</string>
+    <string name="pet_weight">Weight</string>
+    <string name="pet_height">Height to Shoulder</string>
+    <string name="pet_breed">Breed</string>
+    <string name="pet_color">Color</string>
+    <string name="pet_spots">Spots</string>
+    <string name="pet_sign">Particular Signs</string>
+    <string name="pet_save">Save</string>
+    <string name="pet_delete">Delete</string>
+    <string name="my_pets">My Pets</string>
+    <string name="add_pet">Add</string>
+
+    <!--  BMI  -->
+    <string name="bmi_cal">BMI Calculator</string>
+    <string name="bmi_birth">Birthday</string>
+    <string name="bmi_gender">Gender</string>
+    <string name="bmi_breed">Breed</string>
+    <string name="bmi_calculate">Calculate BMI</string>
+
+    <!--  Profile  -->
+    <string name="my_profile">My Detail</string>
+    <string name="my_name">Name</string>
+    <string name="my_age">Age</string>
+    <string name="my_number">Number</string>
+    <string name="my_address">Address</string>
+
+    <!--    Anjalee -->
+
+    <string name="pageTitle">Vaccinations</string>
+    <string name="subTitle">Item Name, Description, Edit</string>
+    <string name="vacCalendarBtn">vacCalendarBtnImage</string>
+    <string name="checkBtn">uncheckedBtn</string>
+    <string name="checkBtn2">checkedBtn</string>
+    <string name="pageTitleActivity2">Add New Vaccine</string>
+    <string name="vacDeleteBtn">Delete Vaccine</string>
+    <string name="vacName">Vaccine Name :</string>
+    <string name="vacNameInput">Enter vaccine name..</string>
+    <string name="vacDosage">Dosage :</string>
+    <string-array name="DosageList">
+        <item>1/2 ml</item>
+        <item>1 ml</item>
+        <item>2 ml</item>
+        <item>3 ml</item>
+        <item>4 ml</item>
+        <item>5 ml</item>
+    </string-array>
+    <string name="vacReminder">Add Reminder :</string>
+    <string name="vacNotes">Notes :</string>
+    <string name="vacNotesInput">Write something here..</string>
+    <string name="vacSaveBtn">Save</string>
+    <string name="vacCancelBtn">Cancel</string>
+    <string name="vacNavigatorBtn">Vaccinations</string>
+    <string name="vacReminderTitle">Add Reminder</string>
+    <string name="vacReminderDate">Date :</string>
+    <string name="vacReminderTime">Time :</string>
+    <string name="vacDateInput">MM/DD/YY</string>
+    <string name="vacTimeInput">Enter time...</string>
+    <string name="pageTitleActivity4">Vaccine Details</string>
+    <string name="vacName1">DHPP Vaccine</string>
+    <string name="vacImageInfo">DHPP Vaccine image</string>
+    <string name="vacInfoAge">Age 6 weeks and above</string>
+    <string name="vacInfoBtn">Back to main page</string>
+    <string name="vacInfo">The 5-in-1 vaccine for dogs is typically referred to by its acronym (DHPP, DAPP, or DA2PP) to indicate the diseases it protects against. The canine 5-in-1 vaccine includes protection against canine distemper virus (indicated by the letter D), two types of adenovirus, aka hepatitis and kennel cough (named A, A2, or H), parainfluenza (P), and parvovirus (P). These diseases are all caused by viruses with no known cure, so vaccination is the primary way to keep dogs protected. They are also highly contagious, and dogs of all ages are at risk of becoming infected.</string>
+    <string name="vacEditBtn">Edit Vaccinations</string>
+    <string name="vacAgeLimit">Dog\'s Age :</string>
+
+    <!--    oshan -->
+
+    <string name="vet_detail1">Add veterinarian</string>
+    <string name="vet_detail2">Name of the veterinarian</string>
+    <string name="vet_detail3">Email</string>
+    <string name="vet_detail4">Address</string>
+    <string name="vet_detail5">Work hours</string>
+    <string name="vet_detail6">Contact number</string>
+    <string name="vet_detail7">Notes</string>
+    <string name="vet_button1">SAVE</string>
+    <string name="vet_listview1">Veterinarian List</string>
+    <string name="vet_backbtn1">Exit</string>
+    <string name="vetlistbtn1">ADD</string>
+    <string name="apntlist1">Appointment List</string>
+    <string name="apntbtn1">STATS</string>
+    <string name="apnbtn2">ADD</string>
+    <string name="addapnt1">Add Appointment</string>
+    <string name="addapnt8">Title</string>
+    <string name="addapnt2">Date</string>
+    <string name="addapnt3">Time</string>
+    <string name="addapnt4">Remainder</string>
+    <string name="addapnt5">Exit</string>
+    <string name="addapnt6">Delete</string>
+    <string name="addapnt7">Save</string>
+    <string name="statnote">Note</string>
+    <string name="pre">Previous</string>
+    <string name="statsdetails">
+        Here we give the User to get a idea of how many \n
+        average days for a month that the User visited \n
+        for appointments and also an average yearly.There for\n
+        user can get the perfect idea how the appointments\n
+        went with respect to time.
+    </string>
+    <string name="statsmonthly">Monthly Average visited</string>
+    <string name="statsanually">Anually Average visited</string>
+    <string name="statsappnt">Appointements Visited</string>
+
+    <!--sadeesha-->
+
+    <string name="cuSpent">Currently Spent</string>
+    <string name="year">Year</string>
+
+    // view button //
+    <string name="button_view_table">View History</string>
+
+    // delete button //
+    <string name="button_delete_table">Delete Table</string>
+
+    // History DB view card 1 //
+    <string name="Msg1">20th JAN 2020</string>
+    <string name="Msg2">Doc fee</string>
+    <string name="Msg3">2500 </string>
+    <string name="Msg4">Vaccine</string>
+    <string name="Msg5">5800</string>
+    <string name="Msg6">Total</string>
+    <string name="Msg7">8300 </string>
+
+    // History DB view card 2 //
+    <string name="Msg8">25th MAR 2020</string>
+    <string name="Msg9">Doc fee</string>
+    <string name="Msg10">2500 </string>
+    <string name="Msg11">Pedigree 50kg</string>
+    <string name="Msg12">6500</string>
+    <string name="Msg13">Total</string>
+    <string name="Msg14">9000 </string>
+
+    // History DB view card 3 //
+    <string name="Msg15">25th APR 2020</string>
+
+    //Calculate button//
+    <string name="calButton">Save and Calculate</string>
+
+    // ExpenView //
+    <string name="EV_Msg1">Description</string>
+    <string name="EV_Msg2">Price</string>
+    <string name="Total">Total</string>
+    <string name="button2">Edit</string>
+    <string name="button3">Delete</string>
+
+</resources>

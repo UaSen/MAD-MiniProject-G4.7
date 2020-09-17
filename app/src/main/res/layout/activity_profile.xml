@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="675dp"
+        android:background="@drawable/header_background"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:ignore="MissingConstraints" />
+
+
+    <EditText
+        android:id="@+id/myName"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_outline"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/my_name"
+        android:inputType="date"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+    <EditText
+        android:id="@+id/myAddress"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_outline"
+        android:drawableStart="@drawable/ic_baseline_local_post_office_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/my_address"
+        android:inputType="number"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myName" />
+
+    <EditText
+        android:id="@+id/myAge"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_outline"
+        android:drawableStart="@drawable/ic_baseline_assignment_turned_in_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/my_age"
+        android:inputType="number"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myAddress" />
+
+
+    <EditText
+        android:id="@+id/myNumber"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_outline"
+        android:drawableStart="@drawable/ic_baseline_local_phone_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/my_number"
+        android:inputType="number"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myAge"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/button_background"
+        android:text="@string/pet_save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_menu_24"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/my_profile"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.429"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/petGender"-->
+    <!--        app:layout_constraintHorizontal_bias="0.931"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/petGender"-->
+    <!--        app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24"-->
+    <!--        tools:ignore="MissingConstraints,VectorDrawableCompat"-->
+    <!--        tools:layout_editor_absoluteY="193dp" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imageView10"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/petBreed"-->
+    <!--        app:layout_constraintHorizontal_bias="0.931"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/petBreed"-->
+    <!--        app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24"-->
+    <!--        tools:ignore="MissingConstraints,VectorDrawableCompat"-->
+    <!--        tools:layout_editor_absoluteY="266dp" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

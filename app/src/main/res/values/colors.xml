@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FDC830</color>
+    <color name="colorPrimaryDark">#EDB618</color>
+    <color name="colorAccent">#F37335</color>
+
+    <color name="colorOrange">#F37335</color>
+    <color name="colorAsh">#A19898</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="outline">#979494</color>
+    <color name="lightYellow">#FDA119</color>
+
+<!--    Anjalee -->
+    <color name="colorHeading">#FF9800</color>
+    <color name="colorButton">#8BFF9800</color>
+    <color name="colorFloatingButton">#FFE928</color>
+    <color name="colorVacList">#FBC067</color>
+    <color name="colorText">#000000</color>
+
+<!--    oshan -->
+    <color name="darkgrey">#979494</color>
+
+<!--    sadeesha -->
+
+    <color name="main_background">#FFFFFF</color>
+    <color name="cuSpent_background1">#FF7F50</color>
+    <color name="year_background1">#FF7F50</color>
+
+    <color name="background1_text">#FFFFFF</color>
+    <color name="textCuSpent">#FF7F50</color>
+    <color name="textYear">#FF7F50</color>
+
+    // view button color //
+    <color name="button_view_table_bgc">#FF7F50</color>
+    <color name="button_view_table_text">#FFFFFF</color>
+
+
+    // delete button color
+    <color name="button_delete_table_bcg">#FF7F50</color>
+    <color name="button_delete_table_text">#FFFFFF</color>
+
+
+    <color name="save_and_cal_button_text">#FFFFFF</color>
+    <color name="full_background">#ff8300</color>
+    <color name="button_background_color">#EBEA3F09</color>
+    <color name="total">#FF7F50</color>
+    <color name="totalText">#FFFFFF</color>
+    <color name="button2_background_color">#FF7F50</color>
+    <color name="button2_text_color">#FFFFFF</color>
+    <color name="button3_background_color">#FF7F50</color>
+    <color name="button3_text_color">#FFFFFF</color>
+
+</resources>
