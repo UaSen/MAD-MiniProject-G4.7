@@ -1,4 +1,4 @@
-package com.base.bawbaw;
+package com.base.bawbaw.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.base.bawbaw.R;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -113,12 +114,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_bmi:
-                Intent bmi = new Intent(this,BmiActivity.class);
+                Intent bmi = new Intent(this, BmiActivity.class);
                 this.startActivity(bmi);
                 break;
 
             case R.id.nav_profile:
-                Intent profile = new Intent(this,ProfileActivity.class);
+                Intent profile = new Intent(this, ProfileActivity.class);
                 this.startActivity(profile);
                 break;
 

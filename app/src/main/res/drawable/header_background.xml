@@ -4,9 +4,16 @@
         <shape>
             <gradient
                 android:angle="180"
-                android:startColor="#FDC830"
-                android:endColor="#F37335"
-                android:type="linear" />
-        </shape>
-    </item>
-</selector>
+                           android:startColor="#FF5050"
+                           android:endColor="#EA4522"
+                        android:type="linear" />
+                </shape>
+            </item>
+        </selector>
+<!--    android:startColor="#F37335"-->
+<!--    android:endColor="#FF5050"-->
+
+            <!--                android:startColor="#FDC830"-->
+    <!--                android:endColor="#F37335"-->
+<!--    android:endColor="#CC2900"-->
+<!--    android:startColor="#FFAD99"-->

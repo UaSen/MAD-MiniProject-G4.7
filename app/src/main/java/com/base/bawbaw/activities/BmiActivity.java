@@ -1,4 +1,4 @@
-package com.base.bawbaw;
+package com.base.bawbaw.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -10,6 +10,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.base.bawbaw.R;
 
 public class BmiActivity extends AppCompatActivity {
 

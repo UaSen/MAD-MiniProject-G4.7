@@ -1,4 +1,4 @@
-package com.base.bawbaw;
+package com.base.bawbaw.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,10 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.base.bawbaw.R;
+
 public class SplashScreen extends AppCompatActivity {
+
     Handler handler;
 
     @Override
@@ -15,6 +18,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         handler = new Handler();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

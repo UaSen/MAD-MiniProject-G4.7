@@ -49,5 +49,7 @@
     <color name="button2_text_color">#FFFFFF</color>
     <color name="button3_background_color">#FF7F50</color>
     <color name="button3_text_color">#FFFFFF</color>
+    <color name="dark_gray">#2A2828</color>
+
 
 </resources>

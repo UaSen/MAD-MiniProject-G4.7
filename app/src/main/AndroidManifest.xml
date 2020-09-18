@@ -9,18 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".PetlistActivity" />
-        <activity android:name=".MypetActivity" />
-        <activity android:name=".BmiActivity" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.PetlistActivity" />
+        <activity android:name=".activities.MypetActivity" />
+        <activity android:name=".activities.BmiActivity" />
+        <activity android:name=".activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
