@@ -31,7 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Button save;
     private OwnerExec ownerExec;
     private Context context;
-    private DbHandler dbHandler;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_bmi:
-                Intent bmi = new Intent(this, BmiActivity.class);
+                Intent bmi = new Intent(this, CalcBmiActivity.class);
                 this.startActivity(bmi);
                 break;
 

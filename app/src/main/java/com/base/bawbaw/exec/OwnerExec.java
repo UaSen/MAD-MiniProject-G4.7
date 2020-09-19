@@ -14,6 +14,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 
 import androidx.annotation.Nullable;
 
@@ -30,6 +31,13 @@ public class OwnerExec extends DbHandler {
         DbHandler dbHandler = new DbHandler(context);
     }
 
+    /**
+     * Insert values in cart table
+     *
+     * @param Owner
+
+     */
+
     /** add owner details method for inserting owner details passing owner model class object **/
     public void addOwnerDetails (Owner owner){
 
@@ -44,11 +52,18 @@ public class OwnerExec extends DbHandler {
         contentValues.put(Query.BawBaw.OWNER_AGE,owner.getAge());
         contentValues.put(Query.BawBaw.OWNER_MOBILE,owner.getMobile());
 
+        try {
         //save data to table
         sqLiteDatabase.insert(Query.BawBaw.OWNER_TABLE,null,contentValues);
 
         //connection close because running connection can make interrupts
         sqLiteDatabase.close();
+
+        } catch (SQLiteException e) {
+
+            sqLiteDatabase.close();
+
+        }
 
     }
 
