@@ -11,7 +11,6 @@
 package com.base.bawbaw.database;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -35,8 +34,10 @@ public class DbHandler extends SQLiteOpenHelper {
 
 
         sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
+        sqLiteDatabase.execSQL(Query.BawBaw.PET_TABLE_CREATE_QUERY);
 
-//        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
+        System.out.println("query table - "+Query.BawBaw.PET_TABLE_CREATE_QUERY);
+
 //        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
 //        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
 //        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
@@ -53,8 +54,7 @@ public class DbHandler extends SQLiteOpenHelper {
 
         //Drop older table if existed
         sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_DROP_QUERY);
-
-//        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_DROP_QUERY);
+        sqLiteDatabase.execSQL(Query.BawBaw.PET_TABLE_DROP_QUERY);
 //        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_DROP_QUERY);
 //        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_DROP_QUERY);
 

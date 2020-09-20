@@ -7,7 +7,7 @@
     <string name="home_pet">My Pet</string>
     <string name="home_record">Records</string>
     <string name="home_vaccination">Vaccination</string>
-    <string name="home_appointments">Appointments</string>
+    <string name="home_appointments">Appointment</string>
     <string name="home_veterinary">Veterinary</string>
     <string name="home_expenses">Expenses</string>
 
@@ -35,6 +35,7 @@
     <string name="pet_spots">Spots</string>
     <string name="pet_sign">Particular Signs</string>
     <string name="pet_save">Save</string>
+    <string name="pet_update">Update</string>
     <string name="pet_delete">Delete</string>
     <string name="my_pets">My Pets</string>
     <string name="add_pet">Add</string>

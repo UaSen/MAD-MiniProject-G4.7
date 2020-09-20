@@ -30,6 +30,8 @@ public final class Query {
 
         public static final String OWNER_TABLE = "owner";
 
+        public static final String PET_TABLE = "pet";
+
         /***************************************************************/
 
 
@@ -44,6 +46,19 @@ public final class Query {
         public static final String OWNER_AGE = "age";
         public static final String OWNER_MOBILE = "mobile";
 
+        /**  constant Owner table COLUMNS **/
+        public static final String PET_ID = "pet_id";
+        public static final String PET_NAME = "name";
+        public static final String PET_BIRTH = "birthday";
+        public static final String PET_WEIGHT = "wight";
+        public static final String PET_HEIGHT = "height";
+        public static final String PET_BREED = "breed";
+        public static final String PET_GENDER = "gender";
+        public static final String PET_COLOR = "colour";
+        public static final String PET_SPOTS = "spots";
+        public static final String PET_SIGNS = "signs";
+
+
         /***************************************************************/
 
 
@@ -51,14 +66,27 @@ public final class Query {
         /** constant for CREATE table **/
 
         /** constant for CREATE Owner table **/
-        public static final  String OWNER_TABLE_CREATE_QUERY = "CREATE TABLE " + Query.BawBaw.OWNER_TABLE + " " + "("
-                + Query.BawBaw.OWNER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + Query.BawBaw.OWNER_NAME + " TEXT,"
-                + Query.BawBaw.OWNER_ADDRESS+ " TEXT,"
-                + Query.BawBaw.OWNER_AGE + " TEXT,"
-                + Query.BawBaw.OWNER_MOBILE + " TEXT "
+        public static final String OWNER_TABLE_CREATE_QUERY = "CREATE TABLE " + OWNER_TABLE + " " + "("
+                + OWNER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + OWNER_NAME + " TEXT,"
+                + OWNER_ADDRESS+ " TEXT,"
+                + OWNER_AGE + " TEXT,"
+                + OWNER_MOBILE + " TEXT "
                 + ");";
 
+        /** constant for CREATE pet table **/
+        public static final String PET_TABLE_CREATE_QUERY = "CREATE TABLE " + PET_TABLE + " " + "("
+                + PET_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + PET_NAME + " TEXT,"
+                + PET_BIRTH + " TEXT,"
+                + PET_WEIGHT + " TEXT,"
+                + PET_HEIGHT + " TEXT,"
+                + PET_BREED + " TEXT,"
+                + PET_GENDER + " TEXT,"
+                + PET_COLOR + " TEXT,"
+                + PET_SPOTS + " TEXT,"
+                + PET_SIGNS + " TEXT "
+                + ");";
 
         /***************************************************************/
 
@@ -69,6 +97,9 @@ public final class Query {
         /** constant for DROP Owner table **/
         public static final  String OWNER_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ OWNER_TABLE;
 
+        /** constant for DROP Pet table **/
+        public static final  String PET_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ PET_TABLE;
+
         /***************************************************************/
 
 
@@ -77,6 +108,9 @@ public final class Query {
 
         /** constant for SELECT ALL from Owner table **/
         public static final  String SELECT_ALL_OWNER_TABLE =  "SELECT * FROM " + OWNER_TABLE;
+
+        /** constant for SELECT ALL from Pet table **/
+        public static final  String SELECT_ALL_PET_TABLE =  "SELECT * FROM " + PET_TABLE;
 
         /***************************************************************/
 

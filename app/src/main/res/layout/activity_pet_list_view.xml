@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="false"
+    android:layout_centerHorizontal="false"
+    android:layout_centerVertical="false"
+    tools:context=".activities.PetListView">
+
+
+    <ImageView
+        android:id="@+id/petPhotoFrame"
+        android:layout_width="278dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/pet_bottom_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/petListPhoto"
+        android:layout_width="242dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/custom_input"
+        app:layout_constraintEnd_toEndOf="@+id/petPhotoFrame"
+        app:layout_constraintStart_toStartOf="@+id/petPhotoFrame"
+        app:layout_constraintTop_toTopOf="@+id/petPhotoFrame" />
+
+    <ImageView
+        android:id="@+id/petListBelow"
+        android:layout_width="242dp"
+        android:layout_height="84dp"
+        android:src="@drawable/custom_input"
+        app:layout_constraintBottom_toBottomOf="@+id/petPhotoFrame"
+        app:layout_constraintEnd_toEndOf="@+id/petPhotoFrame"
+        app:layout_constraintStart_toStartOf="@+id/petPhotoFrame"
+        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/petListViewName"
+        android:layout_width="109dp"
+        android:layout_height="25dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/petListPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/petListPhoto"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toStartOf="@+id/petListPhoto"
+        app:layout_constraintTop_toTopOf="@+id/petListPhoto"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="342dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="496dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/viewPetBtn"
+        android:layout_width="41dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/dog_list_round"
+        android:drawableLeft="@drawable/ic_baseline_pets_24"
+        android:paddingLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/petListBelow"
+        app:layout_constraintStart_toStartOf="@+id/petListBelow"
+        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/addPhotoBtn"
+        android:layout_width="41dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/dog_list_round"
+        android:drawableLeft="@drawable/ic_baseline_add_a_photo_24"
+        android:paddingLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/petListBelow"
+        app:layout_constraintStart_toEndOf="@+id/viewPetBtn"
+        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
+        app:layout_constraintVertical_bias="0.352" />
+
+    <Button
+        android:id="@+id/updatePetBtn"
+        android:layout_width="41dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/dog_list_round"
+        android:drawableLeft="@drawable/ic_baseline_update_24"
+        android:paddingLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/petListBelow"
+        app:layout_constraintStart_toEndOf="@+id/addPhotoBtn"
+        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
+        app:layout_constraintVertical_bias="0.352" />
+
+    <Button
+        android:id="@+id/deletePetBtn"
+        android:layout_width="41dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/dog_list_round"
+        android:drawableLeft="@drawable/ic_baseline_delete_outline_24"
+        android:paddingLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/petListBelow"
+        app:layout_constraintEnd_toEndOf="@+id/petListBelow"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/updatePetBtn"
+        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
+        app:layout_constraintVertical_bias="0.352" />
+</androidx.constraintlayout.widget.ConstraintLayout>

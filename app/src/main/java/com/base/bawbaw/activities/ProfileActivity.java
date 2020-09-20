@@ -108,7 +108,7 @@ public class ProfileActivity extends AppCompatActivity {
                     //update method called to update data
                     ownerExec.updateOwnerDetails(editOwner);
 
-                    startActivity(new Intent(context,ProfileActivity.class));
+                    startActivity(new Intent(context,MainActivity.class));
                 }
             });
 

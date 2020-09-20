@@ -9,6 +9,7 @@
     android:layout_centerVertical="false"
     tools:context=".activities.PetlistActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
@@ -17,95 +18,15 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="-34dp"
         tools:layout_editor_absoluteY="0dp" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
-        android:layout_height="175dp"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/p"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:layout_weight="1">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/header_background">
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="40dp"
-                    android:fontFamily="sans-serif-black"
-                    android:text="Lucy"
-                    android:textColor="#FFFFFF"
-                    android:textSize="30sp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView9"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/textView9"
-                    android:layout_marginStart="32dp"
-                    android:text="5 Years"
-                    android:textColor="#EFECEC"
-                    android:textColorLink="#03A9F4"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView9"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="150dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="6dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/textView9"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_pet"
-                    tools:ignore="VectorDrawableCompat" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/addNew"
-        android:layout_width="122dp"
-        android:layout_height="43dp"
-        android:background="@drawable/button_background"
-        android:text="@string/add_pet"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.914"
-        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toStartOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,16 +38,37 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
         android:fontFamily="@font/autour_one"
         android:gravity="center"
         android:text="@string/my_pets"
         android:textColor="@color/background1_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.429"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.727" />
+
+    <ImageView
+        android:id="@+id/addPetIcon"
+        android:layout_width="61dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_sign_orange"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ListView
+        android:id="@+id/listViewPet"
+        android:layout_width="392dp"
+        android:layout_height="656dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

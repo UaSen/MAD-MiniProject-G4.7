@@ -7,71 +7,61 @@
     android:orientation="vertical"
     tools:context=".activities.MypetActivity">
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="wrap_content"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/colorAccent"
-        app:layout_constraintEnd_toStartOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_menu_24"
-        tools:ignore="VectorDrawableCompat" />
+        android:background="@drawable/header_background"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-2dp" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawablePadding="12dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/pet_title"
-        android:textColor="#2E2E2C"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="140dp"
+        android:fontFamily="@font/autour_one"
+        android:gravity="center"
+        android:text="@string/my_pets"
+        android:textColor="@color/background1_text"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_add_a_photo_24"
-        tools:ignore="VectorDrawableCompat" />
+        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintStart_toEndOf="@+id/imageView11"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.772" />
 
     <EditText
-        android:id="@+id/petName"
+        android:id="@+id/AddPetName"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/input_outline"
         android:drawableStart="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/autour_one"
         android:hint="@string/pet_name"
-        android:inputType="textPersonName"
+        android:inputType="text"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@android:color/holo_red_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
     <EditText
-        android:id="@+id/birthDate"
+        android:id="@+id/AddBirthDate"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -81,19 +71,47 @@
         android:drawableStart="@drawable/ic_baseline_calendar_today_24"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/autour_one"
         android:hint="@string/pet_date"
         android:inputType="date"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@android:color/holo_red_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petName" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPetName" />
 
+    <Button
+        android:id="@+id/AddpetGender"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_outline"
+        android:drawableStart="@drawable/ic_baseline_assignment_turned_in_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:fontFamily="@font/autour_one"
+        android:hint="@string/bmi_gender"
+        android:inputType="text"
+        android:onClick="showPopUpAddGenderMenu"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddBirthDate" />
 
     <EditText
-        android:id="@+id/petWeight"
+        android:id="@+id/AddPetWeight"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -103,19 +121,21 @@
         android:drawableStart="@drawable/ic_baseline_fitness_center_24"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/autour_one"
         android:hint="@string/pet_weight"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@android:color/holo_red_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/birthDate" />
+        app:layout_constraintTop_toBottomOf="@+id/AddpetGender" />
 
     <EditText
-        android:id="@+id/petHeight"
+        android:id="@+id/AddPetHeight"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -125,19 +145,21 @@
         android:drawableStart="@drawable/ic_baseline_height_24"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/autour_one"
         android:hint="@string/pet_height"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@android:color/holo_red_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petWeight" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPetWeight" />
 
-    <EditText
-        android:id="@+id/petBreed"
+    <AutoCompleteTextView
+        android:id="@+id/AddPetBreed"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -147,19 +169,21 @@
         android:drawableStart="@drawable/ic_baseline_pets_24"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/autour_one"
         android:hint="@string/pet_breed"
-        android:inputType="number"
+        android:inputType="text"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@android:color/holo_red_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petHeight" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPetHeight" />
 
     <EditText
-        android:id="@+id/petColor"
+        android:id="@+id/AddPetColor"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -169,19 +193,21 @@
         android:drawableStart="@drawable/ic_baseline_color_lens_24"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/autour_one"
         android:hint="@string/pet_color"
-        android:inputType="number"
+        android:inputType="text"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@android:color/holo_red_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petBreed" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPetBreed" />
 
     <EditText
-        android:id="@+id/petSpots"
+        android:id="@+id/AddPetSpots"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -191,18 +217,20 @@
         android:drawableStart="@drawable/ic_baseline_blur_on_24"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/autour_one"
         android:hint="@string/pet_spots"
-        android:inputType="number"
+        android:inputType="text"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@android:color/holo_red_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petColor" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPetColor" />
 
     <EditText
-        android:id="@+id/petSign"
+        android:id="@+id/AddPetSign"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -212,62 +240,45 @@
         android:drawableStart="@drawable/ic_baseline_leak_add_24"
         android:drawablePadding="10dp"
         android:ems="10"
+        android:fontFamily="@font/autour_one"
         android:hint="@string/pet_sign"
-        android:inputType="number"
+        android:inputType="text"
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
+        android:textColor="@android:color/holo_red_light"
         android:textColorHint="@color/colorAccent"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petSpots" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="16dp"
-        android:text="Sex"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petSign" />
-
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="0dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:text="Male"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/petSign" />
-
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="82dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="16dp"
-        android:text="Female"
-        app:layout_constraintStart_toEndOf="@+id/radioButton"
-        app:layout_constraintTop_toBottomOf="@+id/petSign" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPetSpots" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="122dp"
         android:layout_height="43dp"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="141dp"
         android:layout_marginBottom="19dp"
         android:background="@drawable/button_background"
+        android:fontFamily="@font/autour_one"
         android:text="@string/pet_save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+        app:layout_constraintTop_toBottomOf="@+id/AddPetSign"
+        app:layout_constraintVertical_bias="0.881" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_menu_24"
+        tools:ignore="VectorDrawableCompat" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

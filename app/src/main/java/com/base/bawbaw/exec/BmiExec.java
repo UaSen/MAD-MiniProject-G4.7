@@ -66,7 +66,7 @@ public class BmiExec {
                 }
 
 
-            } else if (breed.equals("Australian Shepherd")) {
+            } }else if (breed.equals("Australian Shepherd")) {
 
                 if (gender.equals("male")) {
 
@@ -98,7 +98,7 @@ public class BmiExec {
                     }
 
 
-                } else if (breed.equals("Australian Cattle Dog")) {
+                }} else if (breed.equals("Australian Cattle Dog")) {
 
                     if (gender.equals("male")) {
 
@@ -130,7 +130,7 @@ public class BmiExec {
                         }
 
 
-                    } else if (breed.equals("Beagle")) {
+                    }} else if (breed.equals("Beagle")) {
 
                         if (gender.equals("male")) {
 
@@ -162,7 +162,7 @@ public class BmiExec {
                             }
 
 
-                        } else if (breed.equals("Boxer")) {
+                        }} else if (breed.equals("Boxer")) {
 
                             if (gender.equals("male")) {
 
@@ -194,7 +194,7 @@ public class BmiExec {
                                 }
 
 
-                            } else if (breed.equals("Bulldog")) {
+                            }} else if (breed.equals("Bulldog")) {
 
                                 if (gender.equals("male")) {
 
@@ -226,7 +226,7 @@ public class BmiExec {
                                     }
 
 
-                                } else if (breed.equals("Cavalier King Charles Spaniel")) {
+                                }} else if (breed.equals("Cavalier King Charles Spaniel")) {
 
                                     if (gender.equals("male")) {
 
@@ -258,7 +258,7 @@ public class BmiExec {
                                         }
 
 
-                                    } else if (breed.equals("Chihuahua")) {
+                                    } }else if (breed.equals("Chihuahua")) {
 
                                         if (gender.equals("male")) {
 
@@ -290,7 +290,7 @@ public class BmiExec {
                                             }
 
 
-                                        } else if (breed.equals("Daschund-miniature")) {
+                                        }} else if (breed.equals("Daschund-miniature")) {
 
                                             if (gender.equals("male")) {
 
@@ -322,7 +322,7 @@ public class BmiExec {
                                                 }
 
 
-                                            } else if (breed.equals("Doberman Pinscher")) {
+                                            }} else if (breed.equals("Doberman Pinscher")) {
 
                                                 if (gender.equals("male")) {
 
@@ -354,7 +354,7 @@ public class BmiExec {
                                                     }
 
 
-                                                } else if (breed.equals("Fox Terrier")) {
+                                                }} else if (breed.equals("Fox Terrier")) {
 
                                                     if (gender.equals("male")) {
 
@@ -386,7 +386,7 @@ public class BmiExec {
                                                         }
 
 
-                                                    } else if (breed.equals("German Shepherd")) {
+                                                    }} else if (breed.equals("German Shepherd")) {
 
                                                         if (gender.equals("male")) {
 
@@ -418,7 +418,7 @@ public class BmiExec {
                                                             }
 
 
-                                                        } else if (breed.equals("Golden Retrieverd")) {
+                                                        } }else if (breed.equals("Golden Retrieverd")) {
 
                                                             if (gender.equals("male")) {
 
@@ -450,7 +450,7 @@ public class BmiExec {
                                                                 }
 
 
-                                                            } else if (breed.equals("Jack Russel Terrier")) {
+                                                            }} else if (breed.equals("Jack Russel Terrier")) {
 
                                                                 if (gender.equals("male")) {
 
@@ -482,7 +482,7 @@ public class BmiExec {
                                                                     }
 
 
-                                                                } else if (breed.equals("Labrador Retriever")) {
+                                                                }} else if (breed.equals("Labrador Retriever")) {
 
                                                                     if (gender.equals("male")) {
 
@@ -514,7 +514,7 @@ public class BmiExec {
                                                                         }
 
 
-                                                                    } else if (breed.equals("Pug")) {
+                                                                    } }else if (breed.equals("Pug")) {
 
                                                                         if (gender.equals("male")) {
 
@@ -546,15 +546,15 @@ public class BmiExec {
                                                                             }
 
 
-                                                                        } else if (breed.equals("Rottweiler")) {
+                                                                        }} else if (breed.equals("Rottweiler")) {
 
                                                                             if (gender.equals("male")) {
 
-                                                                                if (weight < 45.5) {
+                                                                                if (weight < 45) {
 
                                                                                     rangeDog = 1;
 
-                                                                                } else if (weight > 54.5) {
+                                                                                } else if (weight > 54) {
 
                                                                                     rangeDog = 2;
                                                                                 } else {
@@ -578,7 +578,7 @@ public class BmiExec {
                                                                                 }
 
 
-                                                                            } else if (breed.equals("Schnauzer- miniature")) {
+                                                                            }} else if (breed.equals("Schnauzer- miniature")) {
 
                                                                                 if (gender.equals("male")) {
 
@@ -609,7 +609,7 @@ public class BmiExec {
                                                                                     }
 
 
-                                                                                } else if (breed.equals("Siberian Husky")) {
+                                                                                } }else if (breed.equals("Siberian Husky")) {
 
                                                                                     if (gender.equals("male")) {
 
@@ -641,7 +641,7 @@ public class BmiExec {
                                                                                         }
 
 
-                                                                                    } else if (breed.equals("Whippet")) {
+                                                                                    }} else if (breed.equals("Whippet")) {
 
                                                                                         if (gender.equals("male")) {
 
@@ -680,7 +680,4 @@ public class BmiExec {
 
                                                                                     return rangeDog;
 
-                                                                                }
-
-
-                                                                            }
+                                                                                }}

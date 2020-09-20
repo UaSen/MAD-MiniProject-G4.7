@@ -34,7 +34,7 @@ import static android.R.layout.simple_dropdown_item_1line;
 
 public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
 
-     Button calcBmi,genderBmi,petGender,alertBtn;
+     Button calcBmi,petGender,alertBtn;
      Context context = this;
 
      EditText selectDate,weight,height;
@@ -42,7 +42,6 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
 
      TextView textView1,textView2;
 
-     Bmi bmi;
      BmiExec bmiExec;
 
 
@@ -56,7 +55,6 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
 
         //get interface ids
         calcBmi = findViewById(R.id.btnBmi);
-//        genderBmi = findViewById(R.id.petGender);
         petGender = findViewById(R.id.petGender);
         selectDate =(EditText)findViewById(R.id.birthDate);
         weight = findViewById(R.id.petWeight);
@@ -111,7 +109,7 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
         breedView.setAdapter(breedAdapter);
         breedView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-              
+
                 Toast.makeText(getApplicationContext(), (CharSequence) arg0.getItemAtPosition(arg2), Toast.LENGTH_LONG).show();
 
             }

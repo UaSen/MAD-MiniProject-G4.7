@@ -196,7 +196,7 @@
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/autour_one"
                             android:text="@string/home_record"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -241,9 +241,9 @@
                             android:layout_below="@id/imageView7"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
-                            android:fontFamily="sans-serif"
+                            android:fontFamily="@font/autour_one"
                             android:text="@string/home_vaccination"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -274,7 +274,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/imageView8"
-                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/autour_one"
                             android:text="@string/home_appointments"
@@ -323,7 +322,7 @@
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/autour_one"
                             android:text="@string/home_veterinary"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -358,7 +357,7 @@
                             android:layout_marginTop="10dp"
                             android:fontFamily="@font/autour_one"
                             android:text="@string/home_expenses"
-                            android:textSize="24sp" />
+                            android:textSize="18sp" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
