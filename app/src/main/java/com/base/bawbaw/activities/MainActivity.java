@@ -61,10 +61,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(i1);;
                 break;
 
-            case R.id.card2:
-                Intent i2 = new Intent(this,PetlistActivity.class);
-                this.startActivity(i2);
-                break;
+//            case R.id.card2:
+//                Intent i2 = new Intent(this,PetlistActivity.class);
+//                this.startActivity(i2);
+//                break;
 
 //            case R.id.card3:
 //               Intent i3 = new Intent(this,Vaccines1.class);
