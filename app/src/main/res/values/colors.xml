@@ -42,13 +42,14 @@
 
     <color name="save_and_cal_button_text">#FFFFFF</color>
     <color name="full_background">#ff8300</color>
-    <color name="button_background_color">#EBEA3F09</color>
-    <color name="total">#FF7F50</color>
+    <color name="button_background_color">#EA4522</color>
+    <color name="total">#EA4522</color>
     <color name="totalText">#FFFFFF</color>
-    <color name="button2_background_color">#FF7F50</color>
+    <color name="button2_background_color">#EA4522</color>
     <color name="button2_text_color">#FFFFFF</color>
-    <color name="button3_background_color">#FF7F50</color>
+    <color name="button3_background_color">#EA4522</color>
     <color name="button3_text_color">#FFFFFF</color>
+    <color name="ExpenWelcomButton">#FFFFFF</color>
     <color name="dark_gray">#2A2828</color>
 
 

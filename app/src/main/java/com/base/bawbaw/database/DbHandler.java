@@ -43,6 +43,8 @@ public class DbHandler extends SQLiteOpenHelper {
         /** create image table **/
        sqLiteDatabase.execSQL(Query.BawBaw.IMAGE_TABLE_CREATE_QUERY);
 
+       /** create expenses table **/
+        sqLiteDatabase.execSQL(Query.BawBaw.EXPENSES_TABLE_CREATE_QUERY);
 
     }
 
@@ -62,6 +64,8 @@ public class DbHandler extends SQLiteOpenHelper {
         /** drop image table if exist **/
         sqLiteDatabase.execSQL(Query.BawBaw.IMAGE_TABLE_DROP_QUERY);
 
+        /** drop expenses table if exist **/
+        sqLiteDatabase.execSQL(Query.BawBaw.EXPENS_TABLE_DROP_QUERY);
 
         /** Create tables again **/
         onCreate(sqLiteDatabase);

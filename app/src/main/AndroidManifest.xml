@@ -16,8 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.ExpenSecondMainActivity"></activity>
+        <activity android:name=".activities.EditDataActivity"></activity>
+        <activity android:name=".activities.ExpenView"></activity>
+        <activity android:name=".activities.ViewList"></activity>
         <activity android:name=".activities.OwnerPhotoActivity"></activity>
-        <activity android:name=".activities.AddpetPhotoActivity$AddOwnePhotoActivity" />
+        <activity android:name=".activities.Header" />
         <activity android:name=".activities.AddpetPhotoActivity" />
         <activity android:name=".activities.UpdatePetActivity" />
         <activity android:name=".activities.ViewPetActivity" />

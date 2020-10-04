@@ -11,6 +11,8 @@
     <string name="home_veterinary">Veterinary</string>
     <string name="home_expenses">Expenses</string>
 
+    <!-- alert box-->
+    <string name="alertOkay">ok</string>
 
     <!--  Menu  -->
 
@@ -158,35 +160,8 @@
 
     <!--sadeesha-->
 
-    <string name="cuSpent">Currently Spent</string>
-    <string name="year">Year</string>
-
-    // view button //
-    <string name="button_view_table">View History</string>
-
-    // delete button //
-    <string name="button_delete_table">Delete Table</string>
-
-    // History DB view card 1 //
-    <string name="Msg1">20th JAN 2020</string>
-    <string name="Msg2">Doc fee</string>
-    <string name="Msg3">2500 </string>
-    <string name="Msg4">Vaccine</string>
-    <string name="Msg5">5800</string>
-    <string name="Msg6">Total</string>
-    <string name="Msg7">8300 </string>
-
-    // History DB view card 2 //
-    <string name="Msg8">25th MAR 2020</string>
-    <string name="Msg9">Doc fee</string>
-    <string name="Msg10">2500 </string>
-    <string name="Msg11">Pedigree 50kg</string>
-    <string name="Msg12">6500</string>
-    <string name="Msg13">Total</string>
-    <string name="Msg14">9000 </string>
-
-    // History DB view card 3 //
-    <string name="Msg15">25th APR 2020</string>
+    <string name="Msg1">Description</string>
+    <string name="Msg2">Price</string>
 
     //Calculate button//
     <string name="calButton">Save and Calculate</string>
@@ -197,7 +172,8 @@
     <string name="Total">Total</string>
     <string name="button2">Edit</string>
     <string name="button3">Delete</string>
-    <string name="alertOkay">ok</string>
+    <string name="button2_rename">History</string>
+
 
 
 </resources>

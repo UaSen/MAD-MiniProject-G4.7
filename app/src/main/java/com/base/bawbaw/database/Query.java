@@ -24,6 +24,7 @@ public final class Query {
 
         /***************************************************************/
 
+        public static final String TAG = "ExpenDB_controller";
 
 
         /** constant for TABLE names**/
@@ -33,6 +34,8 @@ public final class Query {
         public static final String PET_TABLE = "pet";
 
         public static final String IMAGE_TABLE = "images";
+
+        public static final String EXPEN_TABLE = "Expenses";
 
         /***************************************************************/
 
@@ -65,6 +68,19 @@ public final class Query {
         public static final String IMAGE_ID = "image_id";
         public static final String IMAGE_OWNER = "image_owner";
 
+        /**  constant expenses table COLUMNS **/
+        public static final String COL1 = "ID";
+        public static final String COL2 = "DESCRIPTION1";
+        public static final String COL3 = "PRICE1";
+        public static final String COL4 = "DESCRIPTION2";
+        public static final String COL5 = "PRICE2";
+        public static final String COL6 = "DESCRIPTION3";
+        public static final String COL7 = "PRICE3";
+        public static final String COL8 = "DESCRIPTION4";
+        public static final String COL9 = "PRICE4";
+        public static final String COL10 = "DESCRIPTION5";
+        public static final String COL11 = "PRICE5";
+        public static final String COL12 = "TOTAL";
 
         /***************************************************************/
 
@@ -102,6 +118,11 @@ public final class Query {
                 + IMAGE_OWNER + " BLOB"
                 + ");";
 
+        /** constant for CREATE expenses table **/
+        public static final String EXPENSES_TABLE_CREATE_QUERY = " CREATE TABLE " + EXPEN_TABLE + " ( ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COL2 + " TEXT," + COL3 + " TEXT ,"  +
+                COL4 + " TEXT ," + COL5 + " TEXT ," + COL6 + " TEXT ," +  COL7 + " TEXT ," +  COL8 + " TEXT ," + COL9 + " TEXT ," +
+                COL10 + " TEXT ," + COL11 + " TEXT ," + COL12 + " TEXT )";
+
         /***************************************************************/
 
 
@@ -116,6 +137,9 @@ public final class Query {
 
         /** constant for DROP Pet table **/
         public static final  String IMAGE_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ IMAGE_TABLE;
+
+        /** constant for DROP expenses table **/
+        public static final  String EXPENS_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ EXPEN_TABLE;
 
         /***************************************************************/
 

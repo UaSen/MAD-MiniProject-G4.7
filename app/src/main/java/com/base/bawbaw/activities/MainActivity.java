@@ -73,10 +73,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                this.startActivity(i5);
 //                break;
 //
-//            case R.id.card6:
-//                Intent i6 = new Intent(getApplicationContext(), ExpencesActivity.class);
-//                startActivity(i6);;
-//                break;
+            case R.id.card6:
+                Intent i6 = new Intent(getApplicationContext(), ExpenSecondMainActivity.class);
+                startActivity(i6);
+                break;
 
             default:
                 Intent i7 = new Intent(getApplicationContext(), MainActivity.class);
