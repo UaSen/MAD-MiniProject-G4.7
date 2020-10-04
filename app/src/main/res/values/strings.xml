@@ -121,6 +121,7 @@
     <string name="vacEditBtn">Edit Vaccinations</string>
     <string name="vacAgeLimit">Dog\'s Age :</string>
 
+
     <!--    oshan -->
 
     <string name="vet_detail1">Add veterinarian</string>
@@ -147,14 +148,15 @@
     <string name="addapnt7">Save</string>
     <string name="statnote">Note</string>
     <string name="pre">Previous</string>
+    <string name="editbtn">Update</string>
+    <string name="appointupdate">Update Appointment</string>
     <string name="statsdetails">
-        Here we give the User to get a idea of how many \n
-        average days for a month that the User visited \n
-        for appointments and also an average yearly.There for\n
-        user can get the perfect idea how the appointments\n
-        went with respect to time.
+        Baw Baw Specially made for the sake of pets  \n
+        and its owners for manage the tasks of the pets \n
+        users wil be able to get the benefit of these features \n
+        through one app.
     </string>
-    <string name="statsmonthly">Monthly Average visited</string>
+    <string name="statsmonthly">pending appointments</string>
     <string name="statsanually">Anually Average visited</string>
     <string name="statsappnt">Appointements Visited</string>
 

@@ -46,6 +46,9 @@ public class DbHandler extends SQLiteOpenHelper {
        /** create expenses table **/
         sqLiteDatabase.execSQL(Query.BawBaw.EXPENSES_TABLE_CREATE_QUERY);
 
+        /** create vaccination table **/
+        sqLiteDatabase.execSQL(Query.BawBaw.VACCINATION_TABLE_CREATE_QUERY);
+
     }
 
 
@@ -66,6 +69,9 @@ public class DbHandler extends SQLiteOpenHelper {
 
         /** drop expenses table if exist **/
         sqLiteDatabase.execSQL(Query.BawBaw.EXPENS_TABLE_DROP_QUERY);
+
+        /** drop vaccination table if exist **/
+        sqLiteDatabase.execSQL(Query.BawBaw.VACCINATION_TABLE_DROP_QUERY);
 
         /** Create tables again **/
         onCreate(sqLiteDatabase);

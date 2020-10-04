@@ -37,6 +37,8 @@ public final class Query {
 
         public static final String EXPEN_TABLE = "Expenses";
 
+        public static final String vacTableName = "vac";
+
         /***************************************************************/
 
 
@@ -82,6 +84,13 @@ public final class Query {
         public static final String COL11 = "PRICE5";
         public static final String COL12 = "TOTAL";
 
+        /**  constant vaccination table COLUMNS **/
+        public static final String VACID= "vacId";
+        public static final String VACTITLE= "vacTitle";
+        public static final String VACDES= "vacDes";
+        public static final String VACSTART= "vacStart";
+        public static final String VACEND= "vacEnd";
+
         /***************************************************************/
 
 
@@ -123,6 +132,16 @@ public final class Query {
                 COL4 + " TEXT ," + COL5 + " TEXT ," + COL6 + " TEXT ," +  COL7 + " TEXT ," +  COL8 + " TEXT ," + COL9 + " TEXT ," +
                 COL10 + " TEXT ," + COL11 + " TEXT ," + COL12 + " TEXT )";
 
+        /** constant for CREATE vaccination table **/
+        public static final String VACCINATION_TABLE_CREATE_QUERY = "CREATE TABLE " + vacTableName +" " +
+                "("
+                + VACID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + VACTITLE + " TEXT,"
+                + VACDES + " TEXT,"
+                + VACSTART + " TEXT,"
+                + VACEND + " TEXT"
+                +");";
+
         /***************************************************************/
 
 
@@ -140,6 +159,9 @@ public final class Query {
 
         /** constant for DROP expenses table **/
         public static final  String EXPENS_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ EXPEN_TABLE;
+
+        /** constant for DROP vaccination table **/
+        public static final  String VACCINATION_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ vacTableName;
 
         /***************************************************************/
 
