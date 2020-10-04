@@ -39,6 +39,10 @@ public final class Query {
 
         public static final String vacTableName = "vac";
 
+        public static final String VET_TABLE = "vetdetails";
+
+        public static final String APP_TABLE="vetappointment";
+
         /***************************************************************/
 
 
@@ -91,6 +95,25 @@ public final class Query {
         public static final String VACSTART= "vacStart";
         public static final String VACEND= "vacEnd";
 
+        /**  constant vet table COLUMNS **/
+        public static final String V_ID = "id";
+        public static final String V_NAME= "name";
+        public static final String V_EMAIL = "email";
+        public static final String V_ADDRESS = "address";
+        public static final String V_WORKHOURS = "workhours";
+        public static final String V_CONTACTNUMBER = "contactnumber";
+        public static final String V_NOTES = "notes";
+        public static final String V_STARTED = "started";
+        public static final String  V_FINISHED = "finished";
+
+        /**  constant vet appointment table COLUMNS **/
+        public static final String A_ID="aid";
+        public static final String A_TITLE="title";
+        public static final String A_VNAME="vname";
+        public static final String A_DATE="date";
+        public static final String A_TIME="time";
+        public static final String A_ANOTES="notes";
+
         /***************************************************************/
 
 
@@ -142,6 +165,31 @@ public final class Query {
                 + VACEND + " TEXT"
                 +");";
 
+        /** constant for CREATE vet table **/
+        public static final String VET_TABLE_CREATE_QUERY = "CREATE TABLE " + VET_TABLE + " " + "("
+                + V_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + V_NAME + " TEXT,"
+                + V_EMAIL + " TEXT,"
+                + V_ADDRESS + " TEXT,"
+                + V_WORKHOURS + " TEXT,"
+                + V_CONTACTNUMBER + " TEXT,"
+                + V_NOTES + " TEXT,"
+                + V_STARTED + " TEXT,"
+                + V_FINISHED + " TEXT "
+                + ");";
+
+        /** constant for CREATE vet appointment table **/
+        public static final String TABLE_CREATE_QUERY_APPOINTMENT  = "CREATE TABLE " + APP_TABLE + " " + "("
+                + A_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + A_TITLE + " TEXT,"
+                + A_VNAME + " TEXT,"
+                + A_DATE + " TEXT,"
+                + A_TIME + " TEXT,"
+                + A_ANOTES + " TEXT,"
+                + V_STARTED + " TEXT,"
+                + V_FINISHED + " TEXT "
+                + ");";
+
         /***************************************************************/
 
 
@@ -162,6 +210,13 @@ public final class Query {
 
         /** constant for DROP vaccination table **/
         public static final  String VACCINATION_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ vacTableName;
+
+        /** constant for DROP vet table **/
+        public static final  String VET_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ VET_TABLE;
+
+        /** constant for DROP vet appointment table **/
+        public static final  String VAT_APP_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ APP_TABLE;
+
 
         /***************************************************************/
 

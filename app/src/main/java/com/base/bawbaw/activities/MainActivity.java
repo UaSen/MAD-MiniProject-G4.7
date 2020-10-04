@@ -53,26 +53,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(i1);;
                 break;
 
-//            case R.id.card2:
-//                Intent i2 = new Intent(this,PetlistActivity.class);
-//                this.startActivity(i2);
-//                break;
+            case R.id.card2:
+                Intent i2 = new Intent(this,viewStatsActivity.class);
+                this.startActivity(i2);
+                break;
 
             case R.id.card3:
                Intent i3 = new Intent(this,Vaccines1.class);
                 this.startActivity(i3);
                break;
-//
-//            case R.id.card4:
-//                Intent i4 = new Intent(this, appointmentsActivity.class);
-//                this.startActivity(i4);
-//                break;
-//
-//            case R.id.card5:
-//                Intent i5 = new Intent(this,vetListActivity.class);
-//                this.startActivity(i5);
-//                break;
-//
+
+            case R.id.card4:
+                Intent i4 = new Intent(this, appointmentlistActivity.class);
+                this.startActivity(i4);
+                break;
+
+            case R.id.card5:
+                Intent i5 = new Intent(this,vetListActivity.class);
+                this.startActivity(i5);
+                break;
+
             case R.id.card6:
                 Intent i6 = new Intent(getApplicationContext(), ExpenSecondMainActivity.class);
                 startActivity(i6);
