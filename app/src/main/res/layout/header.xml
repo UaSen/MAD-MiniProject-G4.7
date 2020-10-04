@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:orientation="vertical"
     android:background="@drawable/header_background"
     android:gravity="bottom"
-    android:padding="20dp">
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".activities.Header">
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:id="@+id/ownerMenu"
+        android:layout_width="65dp"
+        android:layout_height="82dp"
         android:src="@drawable/ic_user" />
 
     <TextView
+        android:id="@+id/nameMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-black"
-        android:text="@string/nav_name"
-        android:textSize="24dp"
-        android:textColor="@color/colorWhite"/>
+        android:text="UDANI"
+        android:textColor="@color/colorWhite"
+        android:textSize="24dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-light"
         android:text="@string/nav_slogan"
-        android:textSize="18dp"
-        android:textColor="@color/colorWhite"/>
+        android:textColor="@color/colorWhite"
+        android:textSize="18dp" />
 
+    <!--    android:text="@string/nav_name"-->
+    <!--    android:src="@drawable/ic_user"-->
 </LinearLayout>

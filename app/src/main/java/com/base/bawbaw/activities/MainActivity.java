@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //get view for set menu bar
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar2);
@@ -40,15 +41,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
 
-//        cardView1 = (CardView) findViewById(R.id.card1);
-//        cardView1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i1 = new Intent(getApplicationContext(), MypetActivity.class);
-//                startActivity(i1);
-//            }
-//        });
-//
 
     }
 

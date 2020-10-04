@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.base.bawbaw">
+    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -9,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.UpdatePetActivity"></activity>
+        <activity android:name=".activities.OwnerPhotoActivity"></activity>
+        <activity android:name=".activities.AddpetPhotoActivity$AddOwnePhotoActivity" />
+        <activity android:name=".activities.AddpetPhotoActivity" />
+        <activity android:name=".activities.UpdatePetActivity" />
         <activity android:name=".activities.ViewPetActivity" />
         <activity android:name=".activities.PetListView" />
         <activity android:name=".activities.CalcBmiActivity" />
@@ -24,6 +34,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.MainActivity" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
 
         <meta-data
             android:name="preloaded_fonts"

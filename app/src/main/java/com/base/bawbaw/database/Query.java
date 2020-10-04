@@ -32,6 +32,8 @@ public final class Query {
 
         public static final String PET_TABLE = "pet";
 
+        public static final String IMAGE_TABLE = "images";
+
         /***************************************************************/
 
 
@@ -57,6 +59,11 @@ public final class Query {
         public static final String PET_COLOR = "colour";
         public static final String PET_SPOTS = "spots";
         public static final String PET_SIGNS = "signs";
+        public static final String IMAGE_STORE = "image";
+
+        /**  constant Image table COLUMNS **/
+        public static final String IMAGE_ID = "image_id";
+        public static final String IMAGE_OWNER = "image_owner";
 
 
         /***************************************************************/
@@ -85,7 +92,14 @@ public final class Query {
                 + PET_GENDER + " TEXT,"
                 + PET_COLOR + " TEXT,"
                 + PET_SPOTS + " TEXT,"
-                + PET_SIGNS + " TEXT "
+                + PET_SIGNS + " TEXT, "
+                + IMAGE_STORE + " BLOB"
+                + ");";
+
+        /** constant for CREATE image table **/
+        public static final String IMAGE_TABLE_CREATE_QUERY = "CREATE TABLE " + IMAGE_TABLE + " " + "("
+                + IMAGE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + IMAGE_OWNER + " BLOB"
                 + ");";
 
         /***************************************************************/
@@ -100,6 +114,9 @@ public final class Query {
         /** constant for DROP Pet table **/
         public static final  String PET_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ PET_TABLE;
 
+        /** constant for DROP Pet table **/
+        public static final  String IMAGE_TABLE_DROP_QUERY =  "DROP TABLE IF EXISTS "+ IMAGE_TABLE;
+
         /***************************************************************/
 
 
@@ -111,6 +128,9 @@ public final class Query {
 
         /** constant for SELECT ALL from Pet table **/
         public static final  String SELECT_ALL_PET_TABLE =  "SELECT * FROM " + PET_TABLE;
+
+        /** constant for SELECT ALL from Image table **/
+        public static final String SELECT_ALL_IMAGE_TABLE = "SELECT * FROM " + IMAGE_TABLE;
 
         /***************************************************************/
 
@@ -177,6 +197,7 @@ public final class Query {
 
         /** Constant for column index 13 */
         public static final int  COLUMN_THIRTEEN = 13;
+
 
         /***************************************************************/
 

@@ -11,8 +11,10 @@
 package com.base.bawbaw.database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 
 import androidx.annotation.Nullable;
 
@@ -32,15 +34,14 @@ public class DbHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
-
+        /** create owner table **/
         sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
+
+        /** create pet table **/
         sqLiteDatabase.execSQL(Query.BawBaw.PET_TABLE_CREATE_QUERY);
 
-        System.out.println("query table - "+Query.BawBaw.PET_TABLE_CREATE_QUERY);
-
-//        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
-//        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
-//        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_CREATE_QUERY);
+        /** create image table **/
+       sqLiteDatabase.execSQL(Query.BawBaw.IMAGE_TABLE_CREATE_QUERY);
 
 
     }
@@ -52,17 +53,22 @@ public class DbHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
 
-        //Drop older table if existed
+        /** drop owner table if exist **/
         sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_DROP_QUERY);
+
+        /** drop owner table if exist **/
         sqLiteDatabase.execSQL(Query.BawBaw.PET_TABLE_DROP_QUERY);
-//        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_DROP_QUERY);
-//        sqLiteDatabase.execSQL(Query.BawBaw.OWNER_TABLE_DROP_QUERY);
+
+        /** drop image table if exist **/
+        sqLiteDatabase.execSQL(Query.BawBaw.IMAGE_TABLE_DROP_QUERY);
 
 
-
-        //Create tables again
+        /** Create tables again **/
         onCreate(sqLiteDatabase);
 
     }
+
+
+
 
 }

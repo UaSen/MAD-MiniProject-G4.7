@@ -21,15 +21,17 @@ import com.base.bawbaw.model.Pet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PetlistActivity extends AppCompatActivity{
+public class PetlistActivity extends AppCompatActivity {
 
-    ImageView imageView;
+    ImageView imageView, listback;
 
     private ListView listView;
     Context context;
     private List<Pet> petList;
-    PetExec petExec;
 
+    Pet pet;
+    PetExec petExec;
+    Button btn1, btn2, btn3, btn4;
 
 
     @Override
@@ -37,20 +39,28 @@ public class PetlistActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_petlist);
 
+        //declare view by getting id
         listView = findViewById(R.id.listViewPet);
         petList = new ArrayList<>();
         imageView = findViewById(R.id.addPetIcon);
+        listback = findViewById(R.id.listBack);
 
+        //set application context
         context = this;
 
+        //create pet Execution object
         petExec = new PetExec(context);
+
+        //get pet list to show in list view
         petList = petExec.getAllPetList();
 
-        PetAdapter petAdapter = new PetAdapter(context,R.layout.activity_pet_list_view,petList);
+        //set adapter using pet list
+        PetAdapter petAdapter = new PetAdapter(context, R.layout.activity_pet_list_view, petList);
 
-
+        //set adapter to list view
         listView.setAdapter(petAdapter);
 
+        //navigate to add new pet
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,46 +69,56 @@ public class PetlistActivity extends AppCompatActivity{
             }
         });
 
+        //navigate to back
+        listback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context, MainActivity.class));
+            }
+        });
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-//                arryalist eke mona todo ekat check kre kiyl gnne meke position eka arn ekat adalw dialog box eka pena ynne
-
+                //parent view
                 View parentRow = (View) view.getParent();
 
-                Button btn1 = parentRow.findViewById(R.id.viewPetBtn);
-                Button btn2 = parentRow.findViewById(R.id.updatePetBtn);
-                Button btn3 = parentRow.findViewById(R.id.deletePetBtn);
+                btn1 = parentRow.findViewById(R.id.viewPetBtn);
+                btn2 = parentRow.findViewById(R.id.updatePetBtn);
+                btn3 = parentRow.findViewById(R.id.delPetBtn);
+                btn4 = parentRow.findViewById(R.id.addPhotoBtn);
 
-                final Pet pet = petList.get(position);
+                //get position to identify pet
+                pet = petList.get(position);
 
-                System.out.println("view btn po" + position);
-                System.out.println("view btn " + btn1);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
+                btn1.setOnClickListener(new View.OnClickListener() {
 
-                 @Override
-                 public void onClick(View view) {
+                    @Override
+                    public void onClick(View view) {
+                        finish();
 
-                     Intent petView = new Intent(context, ViewPetActivity.class);
 
-                     petView.putExtra("id",String.valueOf(pet.getPetId()));
+                        Intent petView = new Intent(context, ViewPetActivity.class);
 
-                     context.startActivity(petView);
+                        petView.putExtra("id", String.valueOf(pet.getPetId()));
 
-        }
-    });
+                        context.startActivity(petView);
+
+                    }
+                });
 
                 btn2.setOnClickListener(new View.OnClickListener() {
 
                     @Override
                     public void onClick(View view) {
+                        finish();
 
                         Intent petView = new Intent(context, UpdatePetActivity.class);
 
-                        petView.putExtra("id",String.valueOf(pet.getPetId()));
+                        petView.putExtra("id", String.valueOf(pet.getPetId()));
 
                         context.startActivity(petView);
 
@@ -110,9 +130,10 @@ public class PetlistActivity extends AppCompatActivity{
                     @Override
                     public void onClick(View view) {
 
+                        finish();
+
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
-//                        builder.setTitle("Test");
                         builder.setMessage("Are you sure?");
 
                         builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
@@ -120,38 +141,53 @@ public class PetlistActivity extends AppCompatActivity{
                             public void onClick(DialogInterface dialogInterface, int i) {
 
                                 petExec.deletePet(pet.getPetId());
-                                startActivity(new Intent(context,MainActivity.class));
+                                startActivity(new Intent(context, PetlistActivity.class));
+
+//                                Intent petView = new Intent(context, PetlistActivity.class);
+
+//                                petView.putExtra("id",String.valueOf(pet.getPetId()));
+
+//                                context.startActivity(petView);
 
                             }
+
+
                         });
 
-                        builder.show();
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
+//                        builder.show();
 
 
+                    }
 
 
-                        Intent petView = new Intent(context, PetlistActivity.class);
+                });
 
-                        petView.putExtra("id",String.valueOf(pet.getPetId()));
+                btn4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        finish();
 
-                        context.startActivity(petView);
+                        Intent imgView = new Intent(context, AddpetPhotoActivity.class);
+
+                        imgView.putExtra("id", String.valueOf(pet.getPetId()));
+
+                        context.startActivity(imgView);
+
 
                     }
                 });
-
-
 
             }
         });
 
 
-
     }
 
 
-
-
-    }
+}
 
 
 

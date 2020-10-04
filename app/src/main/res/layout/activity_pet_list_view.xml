@@ -9,121 +9,131 @@
     android:layout_centerVertical="false"
     tools:context=".activities.PetListView">
 
-
-    <ImageView
-        android:id="@+id/petPhotoFrame"
-        android:layout_width="278dp"
-        android:layout_height="340dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/pet_bottom_view"
-        android:focusable="false"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="355dp"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:clickable="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:ignore="NotSibling">
 
-    <ImageView
-        android:id="@+id/petListPhoto"
-        android:layout_width="242dp"
-        android:layout_height="213dp"
-        android:layout_marginTop="12dp"
-        android:focusable="false"
-        android:src="@drawable/custom_input"
-        app:layout_constraintEnd_toEndOf="@+id/petPhotoFrame"
-        app:layout_constraintStart_toStartOf="@+id/petPhotoFrame"
-        app:layout_constraintTop_toTopOf="@+id/petPhotoFrame" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="205dp"
+            android:layout_height="255dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardElevation="5dp">
 
-    <ImageView
-        android:id="@+id/petListBelow"
-        android:layout_width="242dp"
-        android:layout_height="84dp"
-        android:focusable="false"
-        android:src="@drawable/custom_input"
-        app:layout_constraintBottom_toBottomOf="@+id/petPhotoFrame"
-        app:layout_constraintEnd_toEndOf="@+id/petPhotoFrame"
-        app:layout_constraintStart_toStartOf="@+id/petPhotoFrame"
-        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
-        app:layout_constraintVertical_bias="0.0" />
+            <RelativeLayout
+                android:layout_width="274dp"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/petListViewName"
-        android:layout_width="109dp"
-        android:layout_height="25dp"
-        android:focusable="false"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/petListPhoto"
-        app:layout_constraintEnd_toEndOf="@+id/petListPhoto"
-        app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toStartOf="@+id/petListPhoto"
-        app:layout_constraintTop_toTopOf="@+id/petListPhoto"
-        app:layout_constraintVertical_bias="0.047" />
+                <ImageView
+                    android:id="@+id/viewPetImage"
+                    android:layout_width="231dp"
+                    android:layout_height="180dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    app:srcCompat="@drawable/ic_boy_and_his_dog_03"
+                    tools:ignore="VectorDrawableCompat" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="342dp"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="385dp" />
+                <TextView
+                    android:id="@+id/petListViewName"
+                    android:layout_width="204dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/viewPetImage"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginBottom="13dp"
+                    android:fontFamily="@font/autour_one"
+                    android:textAlignment="center"
+                    android:textColor="#114b5f" />
+            </RelativeLayout>
 
-    <Button
-        android:id="@+id/viewPetBtn"
-        android:layout_width="41dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/dog_list_round"
-        android:drawableLeft="@drawable/ic_baseline_pets_24"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:paddingLeft="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/petListBelow"
-        app:layout_constraintStart_toStartOf="@+id/petListBelow"
-        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/addPhotoBtn"
-        android:layout_width="41dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/dog_list_round"
-        android:drawableLeft="@drawable/ic_baseline_add_a_photo_24"
-        android:focusable="false"
-        android:focusableInTouchMode="true"
-        android:paddingLeft="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/petListBelow"
-        app:layout_constraintStart_toEndOf="@+id/viewPetBtn"
-        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
-        app:layout_constraintVertical_bias="0.352" />
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/updatePetBtn"
-        android:layout_width="41dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/dog_list_round"
-        android:drawableLeft="@drawable/ic_baseline_update_24"
-        android:focusable="false"
-        android:paddingLeft="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/petListBelow"
-        app:layout_constraintStart_toEndOf="@+id/addPhotoBtn"
-        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
-        app:layout_constraintVertical_bias="0.352" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="31dp"
+            android:layout_height="255dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardElevation="5dp">
 
-    <Button
-        android:id="@+id/deletePetBtn"
-        android:layout_width="41dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/dog_list_round"
-        android:drawableLeft="@drawable/ic_baseline_delete_outline_24"
-        android:focusable="false"
-        android:paddingLeft="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/petListBelow"
-        app:layout_constraintEnd_toEndOf="@+id/petListBelow"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/updatePetBtn"
-        app:layout_constraintTop_toBottomOf="@+id/petListPhoto"
-        app:layout_constraintVertical_bias="0.352" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="257dp">
+
+
+                <Button
+                    android:id="@+id/viewPetBtn"
+                    android:layout_width="79dp"
+                    android:layout_height="59dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="0dp"
+                    android:drawableLeft="@drawable/ic_baseline_pets_24"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:shadowColor="@color/button_background_color" />
+
+                <Button
+                    android:id="@+id/addPhotoBtn"
+                    android:layout_width="79dp"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/viewPetBtn"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:drawableLeft="@drawable/ic_baseline_add_a_photo_24"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+                <Button
+                    android:id="@+id/updatePetBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="63dp"
+                    android:layout_below="@+id/addPhotoBtn"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="-1dp"
+                    android:drawableLeft="@drawable/ic_baseline_update_24"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+
+                <Button
+                    android:id="@+id/delPetBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="62dp"
+                    android:layout_below="@+id/updatePetBtn"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="13dp"
+                    android:drawableLeft="@drawable/ic_baseline_delete_outline_24"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

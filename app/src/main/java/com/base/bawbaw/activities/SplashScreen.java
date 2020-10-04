@@ -29,6 +29,7 @@ public class SplashScreen extends AppCompatActivity {
 
         handler = new Handler();
 
+        //splash screen timer
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -40,18 +41,20 @@ public class SplashScreen extends AppCompatActivity {
             }
         }, 2000);
 
+        //splash screen word shake
         YoYo.with(Techniques.Shake)
                 .duration(2000)
                 .repeat(1)
                 .playOn(bawBawText);
 
+        //splash screen sound
         barkPlay = MediaPlayer.create(this, R.raw.dogbark2);
         if (barkPlay != null) {
             barkPlay.start();
         } else {
             barkPlay.reset();
             try {
-                barkPlay .prepare();
+                barkPlay.prepare();
             } catch (IllegalStateException e) {
 
                 e.printStackTrace();
@@ -65,18 +68,4 @@ public class SplashScreen extends AppCompatActivity {
 
     }
 
-//        MediaPlayer player = new MediaPlayer();
-//        try {
-//            player.setDataSource();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            player.prepare();
-//        } catch (IOException e)
-//            e.printStackTrace();
-//        }
-//        player.start();
-//
-//    }
 }

@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.ProfileActivity">
-
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -16,8 +16,8 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-65dp"
-        tools:layout_editor_absoluteY="-2dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-7dp" />
 
     <EditText
         android:id="@+id/myName"
@@ -129,7 +129,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/backHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -138,27 +138,26 @@
         app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_menu_24"
+        app:srcCompat="@drawable/abc_vector_test"
         tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
         android:fontFamily="@font/autour_one"
         android:gravity="center"
         android:text="@string/my_profile"
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/backHome"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.545" />
 
     <ImageView
-        android:id="@+id/imageView13"
+        android:id="@+id/ownerImage"
         android:layout_width="299dp"
         android:layout_height="153dp"
         app:layout_constraintBottom_toTopOf="@+id/myName"
@@ -170,16 +169,16 @@
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="47dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="88dp"
+        android:id="@+id/clickOwner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_add_a_photo_24"
-        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+        tools:ignore="VectorDrawableCompat" />
 
     <!--    <ImageView-->
     <!--        android:id="@+id/imageView2"-->

@@ -18,6 +18,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,24 +27,26 @@ import com.base.bawbaw.R;
 import com.base.bawbaw.exec.BmiExec;
 import com.base.bawbaw.model.Bmi;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 import static android.R.layout.simple_dropdown_item_1line;
 
-public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
+public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
-     Button calcBmi,petGender,alertBtn;
-     Context context = this;
+    private ImageView imageView;
+    Button calcBmi, petGender, alertBtn;
+    Context context = this;
 
-     EditText selectDate,weight,height;
-     private int mYear, mMonth, mDay;
+    EditText selectDate, weight, height;
+    private int mYear, mMonth, mDay;
 
-     TextView textView1,textView2;
+    TextView textView1, textView2;
 
-     BmiExec bmiExec;
-
+    BmiExec bmiExec;
 
 
     @Override
@@ -56,12 +59,15 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
         //get interface ids
         calcBmi = findViewById(R.id.btnBmi);
         petGender = findViewById(R.id.petGender);
-        selectDate =(EditText)findViewById(R.id.birthDate);
+        selectDate = (EditText) findViewById(R.id.birthDate);
         weight = findViewById(R.id.petWeight);
-        height= findViewById(R.id.petHeight);
+        height = findViewById(R.id.petHeight);
+
+        //image for back press
+        imageView = findViewById(R.id.backHome);
 
         //get menu items for breed and store in a array
-        final String[] breedMenu= getResources().getStringArray(R.array.BreedMenu);
+        final String[] breedMenu = getResources().getStringArray(R.array.BreedMenu);
 
         /** view data picker when clicking the birth date option **/
         selectDate.setOnClickListener(new View.OnClickListener() {
@@ -82,11 +88,11 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
                             new DatePickerDialog.OnDateSetListener() {
 
                                 @Override
-                                public void onDateSet(DatePicker view, int year,
-                                                      int monthOfYear, int dayOfMonth) {
+                                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
                                     //text format
                                     selectDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+
 
                                 }
                             }, mYear, mMonth, mDay);
@@ -98,11 +104,10 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
         });
 
 
-
         /** Array adapter for show breed list **/
 
-        ArrayAdapter<String> breedAdapter= new ArrayAdapter<String>(getApplicationContext(), simple_dropdown_item_1line,breedMenu);
-        final AutoCompleteTextView breedView=(AutoCompleteTextView)findViewById(R.id.petBreed);
+        ArrayAdapter<String> breedAdapter = new ArrayAdapter<String>(getApplicationContext(), simple_dropdown_item_1line, breedMenu);
+        final AutoCompleteTextView breedView = (AutoCompleteTextView) findViewById(R.id.petBreed);
 
         //set threshold for 1 to get menu list by entering one letter
         breedView.setThreshold(1);
@@ -127,34 +132,82 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
                 String checkHeight = height.getText().toString();
                 String checkBreedView = breedView.getText().toString();
 
+                //format date
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
-                if( checkPetGender.isEmpty() || checkSelectDate.isEmpty() || checkWeight.isEmpty() || checkHeight.isEmpty() || checkBreedView.isEmpty()){
+                //get current date
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
 
+                //store current date in a string for format
+                String dateCurr = day + "-" + (month + 1) + "-" + year;
+
+                ///declare date variable for birth date
+                Date date = null;
+
+                try {
+                    //format birth date
+                    date = formatter.parse(checkSelectDate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                //declare date variable for current date
+                Date dateCurrent = null;
+                try {
+                    //format current date
+                    dateCurrent = formatter.parse(dateCurr);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+
+                //check input areas empty or not for calculation
+                if (checkPetGender.isEmpty() || checkSelectDate.isEmpty() || checkWeight.isEmpty() || checkHeight.isEmpty() || checkBreedView.isEmpty()) {
+
+                    //display toast message if at least one input area is empty
                     Context context = getApplicationContext();
-                CharSequence message = "Fill empty Fields";
+                    CharSequence message = "Fill empty Fields";
 
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast1 = Toast.makeText(context, message, duration);
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast1 = Toast.makeText(context, message, duration);
 
-                toast1.show();
-                toast1.setGravity(Gravity.CENTER| Gravity.CENTER, 0, 0);
+                    toast1.show();
+                    toast1.setGravity(Gravity.CENTER | Gravity.CENTER, 0, 0);
 
-                } else{
 
+                } else if (date.after(dateCurrent)) {
+                    //validate birth date
+
+                    //display toast message if birth date in invalid
+                    Context context = getApplicationContext();
+                    CharSequence message = "Enter valid Birthday";
+
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast1 = Toast.makeText(context, message, duration);
+
+                    toast1.show();
+                    toast1.setGravity(Gravity.CENTER | Gravity.CENTER, 0, 0);
+
+                } else {
 
                     float dogWeight = Float.parseFloat(weight.getText().toString());
                     float dogHeight = Float.parseFloat(height.getText().toString());
 
-
                     String dogGender = petGender.getText().toString();
                     String dogBreed = breedView.getText().toString();
 
-
+                    //pass data to the bmiExec object by using overloaded constructor without id
                     bmiExec = new BmiExec(dogWeight, dogHeight, dogBreed, dogGender);
 
+                    //calculate bmi and store in float variable
                     float bmiD = bmiExec.calculateBmi(dogWeight, dogHeight);
+
+                    //check range of the dong and store in integer variable
                     int range = bmiExec.healthRange(dogBreed, dogGender, dogWeight);
-                    System.out.println(range);
+
                     String setRange;
 
                     if (range == 1) {
@@ -168,19 +221,30 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
                     }
 
 
+                    //show custom dialog box analysing bmi
                     showCustomDialog(bmiD, dogBreed, dogGender, setRange);
 
                 }
 
 
-
             }
         });
 
+        //navigate to main activity by pressing back arrow image
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(context, MainActivity.class));
+            }
+        });
 
     }
 
-    private void showCustomDialog(float bmiD,String dogBreed,String dogGender,String setRange) {
+    /**
+     * show custom dialog box
+     **/
+    private void showCustomDialog(float bmiD, String dogBreed, String dogGender, String setRange) {
 
 
         //before inflating the custom alert dialog layout, we will get the current activity view group
@@ -191,7 +255,7 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
         textView1 = dialogView.findViewById(R.id.alertText);
         textView2 = dialogView.findViewById(R.id.bmiRange);
         textView1.setText("BMI - " + bmiD + "\n" + "Breed  - " + dogBreed + "\n" + "Gender - " + dogGender);
-        textView2.setText("Your dog in \n" +setRange);
+        textView2.setText("Your dog in \n" + setRange);
 
         //Now we need an AlertDialog.Builder object
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -211,13 +275,15 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
 
                 //navigate to bmi activity
                 startActivity(new Intent(context, CalcBmiActivity.class));
-
+                finish();
 
             }
         });
     }
 
-    /** get popup menu for gender **/
+    /**
+     * get popup menu for gender
+     **/
     public void showPopUpGenderMenu(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         popup.setOnMenuItemClickListener(this);
@@ -226,7 +292,9 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
     }
 
 
-    /** popup menu view in the text **/
+    /**
+     * popup menu view in the text
+     **/
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
@@ -240,9 +308,6 @@ public class CalcBmiActivity extends AppCompatActivity implements PopupMenu.OnMe
                 return false;
         }
     }
-
-
-
 
 
 }

@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,18 +26,23 @@ import com.base.bawbaw.exec.PetExec;
 import com.base.bawbaw.model.Owner;
 import com.base.bawbaw.model.Pet;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static android.R.layout.simple_dropdown_item_1line;
 
-public class UpdatePetActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener  {
+public class UpdatePetActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     Context context;
 
-    EditText updateName,updateBirth,updateWeight,updateHeight,updateColor,updateSpots,updateSigns;
+    EditText updateName, updateBirth, updateWeight, updateHeight, updateColor, updateSpots, updateSigns;
     private int mYear, mMonth, mDay;
-    Button updatePet,updatePetGender;
+    Button updatePet, updatePetGender;
+
+    ImageView imageView;
 
     private PetExec petExecUpdate;
 
@@ -48,9 +54,9 @@ public class UpdatePetActivity extends AppCompatActivity implements PopupMenu.On
         context = this;
         petExecUpdate = new PetExec(context);
 
-        updatePet= findViewById(R.id.btnUpdate);
+        updatePet = findViewById(R.id.btnUpdate);
         updateName = findViewById(R.id.UpdatePetName);
-        updateBirth = (EditText)findViewById(R.id.UpdateBirthDate);
+        updateBirth = (EditText) findViewById(R.id.UpdateBirthDate);
         updateWeight = findViewById(R.id.UpdatePetWeight);
         updateHeight = findViewById(R.id.UpdatePetHeight);
         updateColor = findViewById(R.id.UpdatePetColor);
@@ -58,17 +64,19 @@ public class UpdatePetActivity extends AppCompatActivity implements PopupMenu.On
         updateSigns = findViewById(R.id.UpdatePetSign);
         updatePetGender = findViewById(R.id.UpdatePetGender);
 
-        final AutoCompleteTextView UpdatePetBreedView=(AutoCompleteTextView)findViewById(R.id.UpdatePetBreed);
+        imageView = findViewById(R.id.backList);
+
+        final AutoCompleteTextView UpdatePetBreedView = (AutoCompleteTextView) findViewById(R.id.UpdatePetBreed);
 
         final String id = getIntent().getStringExtra("id");
 
         Pet viewPet = petExecUpdate.viewSinglePet(Integer.parseInt(id));
 
         updateName.setText(viewPet.getName());
-        updateBirth .setText(viewPet.getBirthday());
+        updateBirth.setText(viewPet.getBirthday());
         updatePetGender.setText(viewPet.getGender());
         updateWeight.setText(String.valueOf(viewPet.getWight()));
-        updateHeight .setText(String.valueOf(viewPet.getHeight()));
+        updateHeight.setText(String.valueOf(viewPet.getHeight()));
         updateColor.setText(viewPet.getColour());
         UpdatePetBreedView.setText(viewPet.getBreed());
         updateSpots.setText(viewPet.getSpots());
@@ -113,7 +121,7 @@ public class UpdatePetActivity extends AppCompatActivity implements PopupMenu.On
 
         /** Array adapter for show breed list **/
 
-        ArrayAdapter<String> AddPetBreedAdapter= new ArrayAdapter<String>(getApplicationContext(), simple_dropdown_item_1line,updatePetBreedMenu);
+        ArrayAdapter<String> AddPetBreedAdapter = new ArrayAdapter<String>(getApplicationContext(), simple_dropdown_item_1line, updatePetBreedMenu);
 
 
         //set threshold for 1 to get menu list by entering one letter
@@ -128,9 +136,12 @@ public class UpdatePetActivity extends AppCompatActivity implements PopupMenu.On
 
         });
 
+
         updatePet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Pet pet;
 
                 //store user input values in variables
                 String nameUpdate = updateName.getText().toString();
@@ -143,27 +154,86 @@ public class UpdatePetActivity extends AppCompatActivity implements PopupMenu.On
                 String spotsUpdate = updateSpots.getText().toString();
                 String signsUpdate = updateSigns.getText().toString();
 
-//                System.out.println(nameUpdate + birth + weightAdd + heightAdd + breedAdd + genderAdd + colorAdd + spotsAdd + signsAdd);
 
-                //store values to the object
-                Pet pet = new Pet(1,nameUpdate,birthUpdate,Float.parseFloat(weightUpdate),Float.parseFloat(heightUpdate),breedUpdate,genderUpdate,colorUpdate,spotsUpdate,signsUpdate);
+                //format date
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
-                //send values to the insert method
-                petExecUpdate.updatePetDetails(pet);
+                //get current date
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
 
-                //navigate to main activity
+                //store current date in a string for format
+                String dateCurr = day + "-" + (month + 1) + "-" + year;
+
+                ///declare date variable for birth date
+                Date date = null;
+
+                try {
+                    //format birth date
+                    date = formatter.parse(birthUpdate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                //declare date variable for current date
+                Date dateCurrent = null;
+                try {
+                    //format current date
+                    dateCurrent = formatter.parse(dateCurr);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                if (date.after(dateCurrent)) {
+                    //validate birth date
+
+                    //display toast message if birth date in invalid
+                    Context context = getApplicationContext();
+                    CharSequence message = "Enter valid Birthday";
+
+                    int duration = Toast.LENGTH_LONG;
+                    Toast toast1 = Toast.makeText(context, message, duration);
+
+                    toast1.show();
+                    toast1.setGravity(Gravity.CENTER | Gravity.CENTER, 0, 0);
+
+                    startActivity(new Intent(context, UpdatePetActivity.class));
+                    finish();
+
+                } else {
+
+                    //store values to the object
+                    pet = new Pet(Integer.parseInt(id), nameUpdate, birthUpdate, Float.parseFloat(weightUpdate), Float.parseFloat(heightUpdate), breedUpdate, genderUpdate, colorUpdate, spotsUpdate, signsUpdate);
+
+                    //send values to the insert method
+                    petExecUpdate.updatePetDetails(pet);
+
+                    //navigate to main activity
+                    startActivity(new Intent(context, PetlistActivity.class));
+                    finish();
+                }
+
+
+            }
+        });
+
+        //navigate to petList activity by pressing back arrow image
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
                 startActivity(new Intent(context, PetlistActivity.class));
-
-
-
-
             }
         });
 
 
     }
 
-    /** get popup menu for gender **/
+    /**
+     * get popup menu for gender
+     **/
     public void showPopUpUpdateGenderMenu(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         popup.setOnMenuItemClickListener(this);
@@ -172,7 +242,9 @@ public class UpdatePetActivity extends AppCompatActivity implements PopupMenu.On
     }
 
 
-    /** popup menu view in the text **/
+    /**
+     * popup menu view in the text
+     **/
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
